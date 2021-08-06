@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#040326">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/poster_path_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foreground="@drawable/gradient"
+        android:scaleType="fitXY"
+        android:src="@drawable/no_image"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints,UnusedAttribute" />
+
+    <TextView
+        android:id="@+id/title_movie"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="380dp"
+        android:foregroundGravity="center_vertical"
+        android:gravity="center_vertical"
+        android:justificationMode="inter_word"
+        android:text="@string/titulo"
+        android:textColor="#a7974c"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/poster_path_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/white_clock"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintBottom_toTopOf="@id/card_synopsis"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_movie"
+        app:srcCompat="@drawable/white_clock"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/movie_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="@string/time"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/card_synopsis"
+        app:layout_constraintLeft_toRightOf="@id/white_clock"
+        app:layout_constraintStart_toEndOf="@id/white_clock"
+        app:layout_constraintTop_toBottomOf="@id/title_movie" />
+
+    <TextView
+        android:id="@+id/movie_minutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="@string/min"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/card_synopsis"
+        app:layout_constraintLeft_toRightOf="@id/movie_duration"
+        app:layout_constraintStart_toEndOf="@id/movie_duration"
+        app:layout_constraintTop_toBottomOf="@id/title_movie" />
+
+    <TextView
+        android:id="@+id/age_group_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/round_button_age"
+        android:text="age group"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/card_synopsis"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/movie_minutes"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_movie" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_synopsis"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="15dp"
+        app:cardBackgroundColor="#35424c"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_movie">
+
+        <TextView
+            android:id="@+id/movie_overview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/synopsis"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/movie_synopsis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:justificationMode="inter_word"
+            android:text="@string/overview_here"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/return_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/left_white_arrow"
+        android:onClick="voltar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatToggleButton
+        android:id="@+id/favorite_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/toggle_button"
+        android:onClick="inFavorite"
+        android:textOff=""
+        android:textOn=""
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

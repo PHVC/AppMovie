@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#03021e"
+    android:orientation="vertical"
+    tools:context=".model.view.activity.MovieListActivity">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:background="#e4e4e4"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/back_button"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/seta_voltar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:text="@string/app_movies"
+            android:layout_marginStart="210dp"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:fontFamily="casual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/movies_recycler_view_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+        app:spanCount="1" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
